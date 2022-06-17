@@ -18,6 +18,7 @@ struct Quad
         QGraphicsPolygonItem *polygonItem = new QGraphicsPolygonItem(shape);
         polygonItem->setBrush(QBrush(c));
         polygonItem->setPen(QPen(c));
+        polygonItem->setZValue(0);
         _scene->addItem(polygonItem);
     }
 };
