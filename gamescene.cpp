@@ -31,41 +31,31 @@ GameScene::GameScene(QObject *parent)
         {
             line.spriteX = -2.5;
             line.fileToPixmap = Game::PATH_TO_IMAGES[4];
-            qDebug() << "A " << Game::PATH_TO_IMAGES[4];
             line.pixmap = m_pixmaps[4];
-            //line.pixmap.load(Game::PATH_TO_BG[4]);
         }
         if (i%17 == 0)
         {
             line.spriteX = 2.0;
             line.fileToPixmap = Game::PATH_TO_IMAGES[5];
-            qDebug() << "B " << Game::PATH_TO_IMAGES[5];
             line.pixmap = m_pixmaps[5];
-            //line.pixmap.load(Game::PATH_TO_BG[5]);
         }
         if ( i > 300 && i%20 == 0)
         {
             line.spriteX= -0.7;
             line.fileToPixmap = Game::PATH_TO_IMAGES[3];
-            qDebug() << "C " << Game::PATH_TO_IMAGES[3];
             line.pixmap= m_pixmaps[3];
-            //line.pixmap.load(Game::PATH_TO_BG[3]);
         }
         if (i > 800 && i%20 == 0)
         {
             line.spriteX= -1.2;
             line.fileToPixmap = Game::PATH_TO_IMAGES[0];
-            qDebug() << "D " << Game::PATH_TO_IMAGES[0];
             line.pixmap= m_pixmaps[0];
-            //line.pixmap.load(Game::PATH_TO_BG[0]);
         }
         if ( i==400 )
         {
             line.spriteX = -1.2;
             line.fileToPixmap = Game::PATH_TO_IMAGES[6];
-            qDebug() << "E " << Game::PATH_TO_IMAGES[6];
             line.pixmap= m_pixmaps[6];
-            //line.pixmap.load(Game::PATH_TO_BG[6]);
         }
 
         if ( i > 750)
