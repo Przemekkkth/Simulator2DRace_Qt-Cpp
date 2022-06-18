@@ -36,6 +36,7 @@ void messageHander(QtMsgType type,
 int main(int argc, char** argv)
 {
     QApplication a(argc, argv);
+    QFile::remove("app.log");
     qInstallMessageHandler(messageHander);
 
     View v;
