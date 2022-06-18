@@ -7,7 +7,7 @@
 GameScene::GameScene(QObject *parent)
     : QGraphicsScene{parent}, m_game(), m_timer(new QTimer(this)), m_rightMove(false), m_leftMove(false),
       m_upMove(false), m_downMove(false), m_speedUp(false), m_speedDown(false), m_accelerate(false),
-      m_playerX(0), m_pos(0), m_H(500)
+      m_playerX(0), m_pos(0), m_H(400)
 {
     loadPixmap();
     setSceneRect(0, 0, m_game.RESOLUTION.width(), m_game.RESOLUTION.height());
@@ -159,8 +159,10 @@ void GameScene::update()
         }
     }
     ////////draw car ///////////////
-    QGraphicsPixmapItem *carItem = new QGraphicsPixmapItem(QPixmap(":/images/car.png").copy(360*5,0,360,184));
-    carItem->setPos(Game::RESOLUTION.width()/2-carItem->boundingRect().width(), m_H);
+    QGraphicsPixmapItem *carItem = new QGraphicsPixmapItem(QPixmap(":/images/car.png").copy(720*5,0,720,368));
+    carItem->setTransformationMode(Qt::SmoothTransformation);
+    carItem->setScale(0.75f);
+    carItem->setPos(Game::RESOLUTION.width()/2-carItem->boundingRect().width() + 200, 300);
     addItem(carItem);
 
 }
