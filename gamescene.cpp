@@ -33,9 +33,9 @@ GameScene::GameScene(QObject *parent)
             line.fileToPixmap = Game::PATH_TO_IMAGES[4];
             line.pixmap = m_pixmaps[4];
         }
-        if (i%17 == 0)
+        if (i%17 == 0  )
         {
-            line.spriteX = 2.0;
+            line.spriteX = 1.0;
             line.fileToPixmap = Game::PATH_TO_IMAGES[5];
             line.pixmap = m_pixmaps[5];
         }
@@ -56,11 +56,6 @@ GameScene::GameScene(QObject *parent)
             line.spriteX = -1.2;
             line.fileToPixmap = Game::PATH_TO_IMAGES[6];
             line.pixmap= m_pixmaps[6];
-        }
-
-        if ( i > 750)
-        {
-            line.y = sin(i/30.0) * 1500;
         }
 
         m_lines.push_back(line);
@@ -94,7 +89,7 @@ void GameScene::update()
     }
     if(m_speedUp)
     {
-        speed = 200;
+        speed = 500;
     }
     if(m_speedDown)
     {
@@ -117,6 +112,7 @@ void GameScene::update()
     while (m_pos < 0) m_pos += m_N*Game::segL;
 
     int startPos = m_pos / Game::segL;
+    m_startPos = startPos;
     int camH = m_lines[startPos].y + m_H;
     if (speed>0)
     {
@@ -197,6 +193,7 @@ void GameScene::keyPressEvent(QKeyEvent *event)
     case Qt::Key_Up:
     {
         m_upMove = true;
+
     }
         break;
     case Qt::Key_Down:
@@ -217,6 +214,7 @@ void GameScene::keyPressEvent(QKeyEvent *event)
     case Qt::Key_W:
     {
         m_speedUp = true;
+        qDebug() << "start pos " << m_startPos;
     }
         break;
     case Qt::Key_S:

@@ -35,6 +35,7 @@ private:
     float m_playerX;
     int m_pos;
     int m_H;
+    int m_startPos;
     // QGraphicsScene interface
 protected:
     virtual void keyPressEvent(QKeyEvent *event) override;
