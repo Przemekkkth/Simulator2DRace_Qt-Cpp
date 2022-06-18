@@ -7,7 +7,7 @@ CarItem::CarItem(QObject *parent)
     m_currentFrame = 4;
     m_timer = new QTimer(this);
     connect(m_timer, &QTimer::timeout, this, &CarItem::updateFrame);
-    m_timer->start(100);
+    m_timer->start(50);
 }
 
 QPixmap CarItem::returnPixmap()
