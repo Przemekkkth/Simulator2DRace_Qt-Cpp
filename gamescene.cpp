@@ -7,7 +7,7 @@
 GameScene::GameScene(QObject *parent)
     : QGraphicsScene{parent}, m_game(), m_timer(new QTimer(this)), m_rightMove(false), m_leftMove(false),
       m_upMove(false), m_downMove(false), m_speedUp(false), m_speedDown(false), m_accelerate(false),
-      m_playerX(0), m_pos(0), m_H(1500)
+      m_playerX(0), m_pos(0), m_H(500)
 {
     loadPixmap();
     setSceneRect(0, 0, m_game.RESOLUTION.width(), m_game.RESOLUTION.height());
@@ -158,8 +158,10 @@ void GameScene::update()
             //qDebug() << "File to pixmap " << m_lines[n%m_N].fileToPixmap;
         }
     }
-
-
+    ////////draw car ///////////////
+    QGraphicsPixmapItem *carItem = new QGraphicsPixmapItem(QPixmap(":/images/car.png").copy(360*5,0,360,184));
+    carItem->setPos(Game::RESOLUTION.width()/2-carItem->boundingRect().width(), m_H);
+    addItem(carItem);
 
 }
 
@@ -199,6 +201,7 @@ void GameScene::keyPressEvent(QKeyEvent *event)
     case Qt::Key_Down:
     {
         m_downMove = true;
+        qDebug() << "h " << m_H;
     }
         break;
     case Qt::Key_Right:
@@ -214,7 +217,7 @@ void GameScene::keyPressEvent(QKeyEvent *event)
     case Qt::Key_W:
     {
         m_speedUp = true;
-        qDebug() << "start pos " << m_startPos;
+
     }
         break;
     case Qt::Key_S:
