@@ -17,13 +17,21 @@ QPixmap CarItem::returnPixmap()
 
 void CarItem::updateFrame()
 {
-    if(m_moveRight && m_currentFrame < 8)
+    if(m_moveRight && m_currentFrame <= 8)
     {
         m_currentFrame++;
+        if(m_currentFrame > 8)
+        {
+            m_currentFrame = 8;
+        }
     }
-    else if(m_moveLeft && m_currentFrame > 0)
+    else if(m_moveLeft && m_currentFrame >= 0)
     {
         m_currentFrame--;
+        if(m_currentFrame < 0)
+        {
+            m_currentFrame = 0;
+        }
     }
     else
     {
