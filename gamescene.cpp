@@ -3,6 +3,8 @@
 #include <QTimer>
 #include <QKeyEvent>
 #include <QGraphicsPixmapItem>
+#include <QDir>
+#include <QPainter>
 
 GameScene::GameScene(QObject *parent)
     : QGraphicsScene{parent}, m_game(), m_timer(new QTimer(this)), m_rightMove(false), m_leftMove(false),
@@ -204,6 +206,18 @@ void GameScene::loadPixmap()
     }
 }
 
+void GameScene::renderScene()
+{
+    QString fileName = QDir::currentPath() + QDir::separator() + "game_scene.png";
+    QRect rect = sceneRect().toAlignedRect();
+    QImage image(rect.size(), QImage::Format_ARGB32);
+    image.fill(Qt::transparent);
+    QPainter painter(&image);
+    render(&painter);
+    image.save(fileName);
+    qDebug() << "saved " << fileName;
+}
+
 void GameScene::keyPressEvent(QKeyEvent *event)
 {
     switch (event->key()) {
@@ -243,6 +257,11 @@ void GameScene::keyPressEvent(QKeyEvent *event)
     case Qt::Key_Tab:
     {
         m_accelerate = true;
+    }
+        break;
+    case Qt::Key_Z:
+    {
+        //renderScene();
     }
         break;
     }
