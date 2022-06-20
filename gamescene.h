@@ -8,7 +8,7 @@
 #include "game.h"
 #include "line.h"
 #include "quad.h"
-#include "caritem.h"
+#include "caranim.h"
 
 class QTimer;
 class GameScene : public QGraphicsScene
@@ -38,7 +38,7 @@ private:
     int m_pos;
     int m_H;
     int m_startPos;
-    CarItem* m_carItem;
+    CarAnim* m_carAnim;
     // QGraphicsScene interface
 protected:
     virtual void keyPressEvent(QKeyEvent *event) override;

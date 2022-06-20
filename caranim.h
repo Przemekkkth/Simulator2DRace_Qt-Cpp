@@ -1,15 +1,15 @@
-#ifndef CARITEM_H
-#define CARITEM_H
+#ifndef CARANIM_H
+#define CARANIM_H
 
 #include <QObject>
 #include <QPixmap>
 #include <QTimer>
 
-class CarItem : public QObject
+class CarAnim : public QObject
 {
     Q_OBJECT
 public:
-    explicit CarItem(QObject *parent = nullptr);
+    explicit CarAnim(QObject *parent = nullptr);
     bool m_moveRight;
     bool m_moveLeft;
     int m_currentFrame;
@@ -22,4 +22,4 @@ private:
     QTimer *m_timer;
 };
 
-#endif // CARITEM_H
+#endif // CARANIM_H
