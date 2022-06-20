@@ -152,13 +152,14 @@ void GameScene::update()
         QColor grass  = (n/3)%2? QColor(16,200,16) : QColor(0,154,0);
         QColor rumble = (n/3)%2? QColor(255,255,255) : QColor(0,0,0);
         QColor road   = (n/3)%2? QColor(107,107,107) : QColor(105,105,105);
+        QColor road_lanes = (n/3)%2? QColor(255, 255, 255) : QColor(105,105,105);
 
         Line p = m_lines[(n-1)%m_N]; //previous line
 
         m_quad.drawQuad(this, grass, 0, p.Y, Game::RESOLUTION.width(), 0, l.Y, Game::RESOLUTION.width());
         m_quad.drawQuad(this, rumble,p.X, p.Y, p.W*1.2, l.X, l.Y, l.W*1.2);
         m_quad.drawQuad(this, road,  p.X, p.Y, p.W, l.X, l.Y, l.W);
-
+        m_quad.drawQuad(this, road_lanes, p.X, p.Y, p.W/25, l.X, l.Y, l.W/25);
     }
 
     ////////draw objects////////
