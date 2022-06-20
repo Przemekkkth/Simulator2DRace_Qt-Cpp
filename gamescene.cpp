@@ -41,7 +41,7 @@ GameScene::GameScene(QObject *parent)
         }
         if ( i > 300 && i%20 == 0)
         {
-            line.spriteX= -0.7;
+            line.spriteX= -1.7;
             line.fileToPixmap = Game::PATH_TO_IMAGES[3];
             line.pixmap= m_pixmaps[3];
         }
