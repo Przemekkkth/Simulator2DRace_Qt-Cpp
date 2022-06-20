@@ -29,7 +29,7 @@ GameScene::GameScene(QObject *parent)
 
         if (i < 300 && i%20 == 0)
         {
-            line.spriteX = -2.5;
+            line.spriteX = -2;
             line.fileToPixmap = Game::PATH_TO_IMAGES[4];
             line.pixmap = m_pixmaps[4];
         }
@@ -47,13 +47,13 @@ GameScene::GameScene(QObject *parent)
         }
         if (i > 800 && i%20 == 0)
         {
-            line.spriteX= -1.2;
+            line.spriteX= -2;
             line.fileToPixmap = Game::PATH_TO_IMAGES[0];
             line.pixmap= m_pixmaps[0];
         }
         if ( i==400 )
         {
-            line.spriteX = -1.2;
+            line.spriteX = -2;
             line.fileToPixmap = Game::PATH_TO_IMAGES[6];
             line.pixmap= m_pixmaps[6];
         }
