@@ -180,6 +180,33 @@ void GameScene::update()
     carItem->setPos(Game::RESOLUTION.width()/2-carItem->boundingRect().width() + 200, 300);
     addItem(carItem);
 
+    QGraphicsRectItem* lRect = new QGraphicsRectItem();
+    lRect->setRect(0,0,m_game.RESOLUTION.width(), m_game.RESOLUTION.height());
+    lRect->setBrush(Qt::black);
+    lRect->setPen(QColor(Qt::black));
+    lRect->setPos(-m_game.RESOLUTION.width(), 0);
+    addItem(lRect);
+
+    QGraphicsRectItem* rRect = new QGraphicsRectItem();
+    rRect->setRect(0,0,m_game.RESOLUTION.width(), m_game.RESOLUTION.height());
+    rRect->setBrush(Qt::black);
+    rRect->setPen(QColor(Qt::black));
+    rRect->setPos(+m_game.RESOLUTION.width(), 0);
+    addItem(rRect);
+
+    QGraphicsRectItem* tRect = new QGraphicsRectItem();
+    tRect->setRect(0,0,m_game.RESOLUTION.width(), m_game.RESOLUTION.height());
+    tRect->setBrush(Qt::black);
+    tRect->setPen(QColor(Qt::black));
+    tRect->setPos(0, -m_game.RESOLUTION.height());
+    addItem(tRect);
+
+    QGraphicsRectItem* bRect = new QGraphicsRectItem();
+    bRect->setRect(0,0,m_game.RESOLUTION.width(), m_game.RESOLUTION.height());
+    bRect->setBrush(Qt::black);
+    bRect->setPen(QColor(Qt::black));
+    bRect->setPos(0, -m_game.RESOLUTION.height());
+    addItem(bRect);
 }
 
 void GameScene::loadPixmap()
