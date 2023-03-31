@@ -21,3 +21,4 @@ qmake && make
 * [Qt] (https://www.qt.io/) - Cross-Platform software for embedded & desktop
 * [Assets] (https://www.kenney.nl/) - assets
 * [Car Asset] (https://chasersgaming.itch.io/racing-asset-safety-car-gameboy) - car asset
+* [Play online](https://przemekkkth.github.io/assets/games/outrun/index.html)
